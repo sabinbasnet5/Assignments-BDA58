@@ -10,7 +10,7 @@ class QuotesSpiderSpider(scrapy.Spider):
         for quote in response.css('div.quote'):
 
             quote_text = quote.css('span.text::text').get()
-            # Remove unwanted characters using string methods (might not be perfect)
+            # Remove unwanted characters using string method
             cleaned_quote = quote_text.strip("‚Äú")  # Removes leading and trailing characters
 
             yield {
